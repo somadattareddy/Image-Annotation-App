@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assign Label</title>
+</head>
+<body>
+    <h2>Assign Label</h2>
+    <img src="{{ image.image.url }}" alt="Uploaded Image">
+    <form method="post">
+        {% csrf_token %}
+        <label for="label">Label:</label>
+        <select name="label" id="label">
+            {% for label_option in label_options %}
+                <option value="{{ label_option }}">{{ label_option }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Assign</button>
+    </form>
+</body>
+</html>
