@@ -1,5 +1,14 @@
 {% extends 'image_handler/base.html' %}
 {% block content %}
     <h1>Home</h1>
+    {% if user.is_authenticated %}
+        <p>Hello, {{ user.username }}!</p>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+    {% else %}
+        <p>Please <a href="{% url 'login' %}">log in</a> to continue.</p>
+    {% endif %}
     <a href="{% url 'upload_image' %}">Start Uploading!</a>
 {% endblock content %}
