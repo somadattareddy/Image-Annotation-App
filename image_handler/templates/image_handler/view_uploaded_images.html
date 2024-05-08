@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Uploaded Images</title>
-</head>
-<body>
+{% extends 'image_handler/base.html' %}
+{% block content %}
     <h2>Uploaded Images</h2>
     <ul>
         {% for image in images %}
@@ -13,5 +9,4 @@
             </li>
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock content %}

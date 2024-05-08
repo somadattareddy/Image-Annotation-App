@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Label Assigned</title>
-</head>
-<body>
+{% extends 'image_handler/base.html' %}
+{% block content %}
     <h2>Label Assigned Successfully</h2>
     <p>The label has been assigned to the image.</p>
     <form action="{% url 'logout' %}" method="post">
         {% csrf_token %}
         <button type="submit">Logout</button>
     </form>
-</body>
-</html>
+{% endblock content %}
