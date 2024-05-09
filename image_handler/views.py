@@ -1,14 +1,3 @@
-# from django.shortcuts import render
-
-# def home(request):
-#     return render(request,'image_handler/home.html')
-
-# def upload_image(request):
-#     return render(request,'image_handler/upload.html')
-
-# def annotate_image(request):
-#     return render(request,'image_handler/annotate.html')
-
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import UploadImageForm
 from .models import UploadedImage
@@ -29,9 +18,6 @@ def upload_image(request):
     else:
         form = UploadImageForm()
     return render(request, 'image_handler/upload_image.html', {'form': form})
-
-def annotate_image(request):
-    return render(request,'image_handler/annotate.html')
 
 @login_required
 def assign_label(request, pk):

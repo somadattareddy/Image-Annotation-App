@@ -1,9 +1,52 @@
 {% extends 'image_handler/base.html' %}
 {% block content %}
     <h2>Upload Image</h2>
-    <form method="post" enctype="multipart/form-data">
+    <style>
+        #drop-area {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            height: 100px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+    <form method="post" enctype="multipart/form-data" class="dropzone">
         {% csrf_token %}
-        {{ form.as_p }}
+        <div id="drop-area">
+            <p>Drag & drop your image files here</p>
+            <input type="file" name="image" id="fileInput" accept="image/*"/>
+        </div>
         <button type="submit">Upload</button>
     </form>
+    <script>
+        var dropArea = document.getElementById('drop-area');
+
+        // Prevent default behavior for dropping folders
+        dropArea.addEventListener('dragover', function(e) {
+            e.preventDefault();
+        });
+
+        dropArea.addEventListener('drop', function(e) {
+            e.preventDefault();
+            var fileList = e.dataTransfer.files;
+            // Check if any folders are present in the dropped files
+            var folders = Array.from(fileList).filter(function(file) {
+                return file.type === '';
+            });
+            if (folders.length > 0) {
+                alert('Please upload individual image files. Folders are not supported.');
+                return;
+            }
+            // Check if any non-image files are present in the dropped files
+            var nonImageFiles = Array.from(fileList).filter(function(file) {
+                return !file.type.startsWith('image/');
+            });
+            if (nonImageFiles.length > 0) {
+                alert('Please upload only image files. Non-image files are not supported.');
+                return;
+            }
+            // If no folders or non-image files, proceed with upload
+            document.getElementById('fileInput').files = fileList;
+        });
+    </script>
 {% endblock content %}

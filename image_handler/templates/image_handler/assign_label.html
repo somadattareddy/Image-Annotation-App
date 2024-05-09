@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Assign Label</title>
-</head>
-<body>
+{% extends 'image_handler/base.html' %}
+{% block content %}
     <h2>Assign Label</h2>
     <img src="{{ image.image.url }}" alt="Uploaded Image">
     <form method="post">
@@ -16,5 +12,4 @@
         </select>
         <button type="submit">Assign</button>
     </form>
-</body>
-</html>
+{% endblock content %}
