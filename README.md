@@ -20,6 +20,8 @@ Welcome to EasyAnnotate, your solution for effortlessly annotating images! With 
 
 ![Home Screen](https://github.com/somadattareddy/Image-Annotation-App/blob/main/SCREENS/Screenshot%20from%202024-05-09%2015-39-52.png)
 
+**Mobile View**
+
 ![Home Screen](https://github.com/somadattareddy/Image-Annotation-App/blob/main/SCREENS/Screenshot%20from%202024-05-09%2015-40-10.png)
 
 ![Home Screen](https://github.com/somadattareddy/Image-Annotation-App/blob/main/SCREENS/Screenshot%20from%202024-05-09%2015-40-24.png)
