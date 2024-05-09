@@ -1,15 +1,32 @@
 {% extends 'image_handler/base.html' %}
 {% block content %}
-    <h2>Assign Label</h2>
-    <img src="{{ image.image.url }}" alt="Uploaded Image">
-    <form method="post">
-        {% csrf_token %}
-        <label for="label">Label:</label>
-        <select name="label" id="label">
-            {% for label_option in label_options %}
-                <option value="{{ label_option }}">{{ label_option }}</option>
-            {% endfor %}
-        </select>
-        <button type="submit">Assign</button>
-    </form>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="text-center mb-4">Assign Class</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <img src="{{ image.image.url }}" alt="Uploaded Image" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="label" class="form-label">Select a Class:</label>
+                            <select name="label" id="label" class="form-control">
+                                <option value="" selected disabled>Choose class</option>
+                                {% for label_option in label_options %}
+                                    <option value="{{ label_option }}">{{ label_option }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="text-center mt-3">
+                            <button type="submit" class="btn btn-primary">Assign</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}

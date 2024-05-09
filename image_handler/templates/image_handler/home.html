@@ -1,14 +1,21 @@
 {% extends 'image_handler/base.html' %}
 {% block content %}
-    <h1>Home</h1>
-    {% if user.is_authenticated %}
-        <p>Hello, {{ user.username }}!</p>
-        <form action="{% url 'logout' %}" method="post">
-            {% csrf_token %}
-            <button type="submit">Logout</button>
-        </form>
-    {% else %}
-        <p>Please <a href="{% url 'login' %}">log in</a> to continue.</p>
-    {% endif %}
-    <a href="{% url 'upload_image' %}">Start Uploading!</a>
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h1>Welcome to EasyAnnotate</h1>
+                <p class="lead">Upload images and annotate them easily!</p>
+                {% if user.is_authenticated %}
+                    <p>Hello, <strong>{{ user.username }}</strong>!</p>
+                    <form action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <button class="btn btn-primary" type="submit">Logout</button>
+                    </form>
+                {% else %}
+                    <p>Please <a href="{% url 'login' %}" class="btn btn-primary">Log In</a> to continue.</p>
+                {% endif %}
+                <a href="{% url 'upload_image' %}" class="btn btn-success mt-3">Start Uploading</a>
+            </div>
+        </div>
+    </div>
 {% endblock content %}

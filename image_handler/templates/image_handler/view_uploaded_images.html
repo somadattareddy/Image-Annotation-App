@@ -1,21 +1,36 @@
 {% extends 'image_handler/base.html' %}
 {% block content %}
-    <h2>Uploaded Images</h2>
-    <ul>
-        {% for image in images %}
-            <li>
-                <img src="{{ image.image.url }}" alt="{{ image.label }}">
-                <p>Label: {{ image.label }}</p>
-                <form action="{% url 'edit_label' image.pk %}" method="post">
-                    {% csrf_token %}
-                    <select name="new_label">
-                        {% for label_option in label_options %}
-                            <option value="{{ label_option }}">{{ label_option }}</option>
-                        {% endfor %}
-                    </select>
-                    <button type="submit">Update Label</button>
-                </form>
-            </li>
-        {% endfor %}
-    </ul>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="text-center mb-4">Your Uploads</h2>
+            <ul class="list-unstyled">
+                {% for image in images %}
+                    <li class="mb-4">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="{{ image.image.url }}" alt="{{ image.label }}" class="img-fluid">
+                            </div>
+                            <div class="col-md-8">
+                                <p><strong>Class:</strong> {{ image.label }}</p>
+                                <form action="{% url 'edit_label' image.pk %}" method="post" class="form-inline">
+                                    {% csrf_token %}
+                                    <div class="form-group mr-2">
+                                        <select name="new_label" class="form-control">
+                                            <option value="" disabled selected>Edit Class</option>
+                                            {% for label_option in label_options %}
+                                                <option value="{{ label_option }}">{{ label_option }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mt-2">Update Class</button>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
 {% endblock content %}

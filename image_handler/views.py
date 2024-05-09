@@ -15,16 +15,9 @@ def upload_image(request):
             uploaded_image = form.save(commit=False)
             uploaded_image.user = request.user
             uploaded_image.save()
-            # Get the uploaded image
             image_path = uploaded_image.image.path
-
-            # Open the image using Pillow
             img = Image.open(image_path)
-
-            # Resize the image
-            resized_img = img.resize((600, 400))  # Set your desired width and height
-
-            # Save the resized image
+            resized_img = img.resize((600, 400)) 
             resized_img.save(image_path)
             return redirect('assign_label', pk=uploaded_image.pk)
     else:
@@ -35,14 +28,13 @@ def upload_image(request):
 def assign_label(request, pk):
     uploaded_image = get_object_or_404(UploadedImage, pk=pk, user=request.user)
 
-    # Define predefined label options
-    label_options = ['Label 1', 'Label 2', 'Label 3']
+    # Defining predefined label options
+    label_options = ['Class 1', 'Class 2', 'Class 3']
     
     if request.method == 'POST':
         label = request.POST.get('label')
         uploaded_image.label = label
         uploaded_image.save()
-        # Redirect to another page after assigning the label
         return redirect('label_assigned')
     
     return render(request, 'image_handler/assign_label.html', {'image': uploaded_image, 'label_options': label_options})
@@ -79,6 +71,5 @@ logout_view = LogoutView.as_view(next_page='/')
 @login_required
 def view_uploaded_images(request):
     images = UploadedImage.objects.filter(user=request.user)
-    # Define predefined label options
-    label_options = ['Label 1', 'Label 2', 'Label 3']
+    label_options = ['Class 1', 'Class 2', 'Class 3']
     return render(request, 'image_handler/view_uploaded_images.html', {'images': images, 'label_options': label_options})
