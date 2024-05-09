@@ -15,6 +15,9 @@ Welcome to EasyAnnotate, your solution for effortlessly annotating images! With 
 ### Screens:
 
 - **Home Screen:** The landing page where users can learn about the app and proceed to sign up or log in.
+
+![Home Screen](https://github.com/somadattareddy/Image-Annotation-App/blob/main/SCREENS/Screenshot%20from%202024-05-09%2015-39-24.png)
+
 - **Upload Screen:** Once logged in, users are directed to the upload page where they can effortlessly upload images using drag-and-drop.
 - **Annotation Screen:** Upon uploading an image, users are redirected to the annotation page, where they can assign classes to their uploaded images seamlessly.
 - **View Uploaded Images Screen:** Users can conveniently view all their uploads here, with the ability to edit the assigned class for any of their uploaded images.
