@@ -18,9 +18,33 @@ Welcome to EasyAnnotate, your solution for effortlessly annotating images! With 
 
 ![Home Screen](https://github.com/somadattareddy/Image-Annotation-App/blob/main/SCREENS/Screenshot%20from%202024-05-09%2015-39-24.png)
 
+![Home Screen](https://github.com/somadattareddy/Image-Annotation-App/blob/main/SCREENS/Screenshot%20from%202024-05-09%2015-39-52.png)
+
+![Home Screen](https://github.com/somadattareddy/Image-Annotation-App/blob/main/SCREENS/Screenshot%20from%202024-05-09%2015-40-10.png)
+
+![Home Screen](https://github.com/somadattareddy/Image-Annotation-App/blob/main/SCREENS/Screenshot%20from%202024-05-09%2015-40-24.png)
+
 - **Upload Screen:** Once logged in, users are directed to the upload page where they can effortlessly upload images using drag-and-drop.
+
+![Upload Screen](https://github.com/somadattareddy/Image-Annotation-App/blob/main/SCREENS/Screenshot%20from%202024-05-09%2015-40-57.png)
+
+
 - **Annotation Screen:** Upon uploading an image, users are redirected to the annotation page, where they can assign classes to their uploaded images seamlessly.
+
+![Annotation Screen](https://github.com/somadattareddy/Image-Annotation-App/blob/main/SCREENS/Screenshot%20from%202024-05-09%2015-41-08.png)
+
+![Annotation Screen](https://github.com/somadattareddy/Image-Annotation-App/blob/main/SCREENS/Screenshot%20from%202024-05-09%2015-41-16.png)
+
+![Annotation Screen](https://github.com/somadattareddy/Image-Annotation-App/blob/main/SCREENS/Screenshot%20from%202024-05-09%2015-41-23.png)
+
 - **View Uploaded Images Screen:** Users can conveniently view all their uploads here, with the ability to edit the assigned class for any of their uploaded images.
+
+![MyUploads Screen](https://github.com/somadattareddy/Image-Annotation-App/blob/main/SCREENS/Screenshot%20from%202024-05-09%2015-43-01.png)
+
+![MyUploads Screen](https://github.com/somadattareddy/Image-Annotation-App/blob/main/SCREENS/Screenshot%20from%202024-05-09%2015-43-15.png)
+
+![MyUploads Screen](https://github.com/somadattareddy/Image-Annotation-App/blob/main/SCREENS/Screenshot%20from%202024-05-09%2015-43-23.png)
+
 
 ### Local Setup:
 
