@@ -6,6 +6,15 @@
             <li>
                 <img src="{{ image.image.url }}" alt="{{ image.label }}">
                 <p>Label: {{ image.label }}</p>
+                <form action="{% url 'edit_label' image.pk %}" method="post">
+                    {% csrf_token %}
+                    <select name="new_label">
+                        {% for label_option in label_options %}
+                            <option value="{{ label_option }}">{{ label_option }}</option>
+                        {% endfor %}
+                    </select>
+                    <button type="submit">Update Label</button>
+                </form>
             </li>
         {% endfor %}
     </ul>
